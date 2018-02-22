@@ -1,0 +1,22 @@
+#BlueJ class context
+comment0.params=
+comment0.target=Pesanan()
+comment0.text=\r\n\ Constructor\ for\ objects\ of\ class\ Pesanan\r\n
+comment1.params=biaya
+comment1.target=void\ setBiaya(double)
+comment2.params=baru
+comment2.target=void\ setPelanggan(Customer)
+comment3.params=diproses
+comment3.target=void\ setStatusDiproses(boolean)
+comment4.params=diproses
+comment4.target=void\ setStatusSelesai(boolean)
+comment5.params=
+comment5.target=double\ getBiaya()
+comment5.text=\r\n\ An\ example\ of\ a\ method\ -\ replace\ this\ comment\ with\ your\ own\r\n\ \r\n\ @param\ \ y\ \ \ a\ sample\ parameter\ for\ a\ method\r\n\ @return\ \ \ \ \ the\ sum\ of\ x\ and\ y\ \r\n
+comment6.params=
+comment6.target=Customer\ getPelanggan()
+comment7.params=
+comment7.target=boolean\ getStatusDiproses()
+comment8.params=
+comment8.target=boolean\ getStatusSelesai()
+numComments=9

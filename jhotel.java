@@ -1,22 +1,20 @@
 
 /**
- * Write a description of class jhotel here.
+ * Class Customer ini memodelkan hotel dimana customer datang membuat pesanan.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author (Johanes Gunawan) 
+ * @version (2018-02-22)
  */
-public class jhotel
+public class JHotel
 {
     // instance variables - replace the example below with your own
-    private int x;
-
+    
     /**
-     * Constructor for objects of class jhotel
+     * Constructor for objects of class JHotel
      */
-    public jhotel()
+    public JHotel()
     {
         // initialise instance variables
-        x = 0;
     }
 
     /**
@@ -25,9 +23,8 @@ public class jhotel
      * @param  y   a sample parameter for a method
      * @return     the sum of x and y 
      */
-    public int sampleMethod(int y)
+    public void main(String args[])
     {
         // put your code here
-        return x + y;
     }
 }

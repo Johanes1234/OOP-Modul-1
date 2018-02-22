@@ -1,0 +1,9 @@
+#BlueJ class context
+comment0.params=baru
+comment0.target=boolean\ addCustomer(Customer)
+comment0.text=\r\n\ An\ example\ of\ a\ method\ -\ replace\ this\ comment\ with\ your\ own\r\n\ \r\n\ @param\ \ y\ \ \ a\ sample\ parameter\ for\ a\ method\r\n\ @return\ \ \ \ \ the\ sum\ of\ x\ and\ y\ \r\n
+comment1.params=id
+comment1.target=boolean\ removeCustomer(int)
+comment2.params=
+comment2.target=java.lang.String[]\ getCustomerDatabase()
+numComments=3
