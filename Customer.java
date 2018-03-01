@@ -7,38 +7,51 @@
  */
 public class Customer
 {
-    // instance variables - replace the example below with your own
-    protected int id;
-    protected String nama;
+    protected static int id;
+    protected static String nama;
 
     /**
      * Constructor for objects of class Customer
      */
     public Customer(int id, String nama)
     {
-        // initialise instance variables
+        id = id;
+        nama = nama;
     }
+    
+    /**
+     * Method untuk memasukkan nilai id
+     * @param id id pelanggan
+     */
     public void setID(int id)
     {
-        
+        Customer.id = id;
     }
+    
+    /**
+     * Method untuk memasukkan nilai nama
+     * @param nama nama pelanggan
+     */
     public void setNama(String nama)
     {
-        
+        Customer.nama = nama;
     }
 
     /**
-     * An example of a method - replace this comment with your own
-     * 
-     * @param  y   a sample parameter for a method
-     * @return     the sum of x and y 
+     * Method untuk mendapat nilai id
+     * @return id pelanggan
      */
     public int getID()
     {
-        return 0;
+        return id;
     }
+    
+    /**
+     * Method untuk mendapat nilai nama
+     * @return nama pelanggan
+     */
     public String getNama()
     {
-        return null;
+        return nama;
     }
 }

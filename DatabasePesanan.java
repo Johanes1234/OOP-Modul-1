@@ -7,7 +7,6 @@
  */
 public class DatabasePesanan
 {
-    // instance variables - replace the example below with your own
     protected String[] list_pesanan;
 
     /**
@@ -15,7 +14,6 @@ public class DatabasePesanan
      */
     public String[] getPesananDatabase()
     {
-        // initialise instance variables
         return null;
     }
 
@@ -27,21 +25,18 @@ public class DatabasePesanan
      */
     public boolean removePesanan()
     {
-        // initialise instance variables
         return false;
     }
     public Pesanan getPesanan(Customer cust)
     {
-        // initialise instance variables
         return null;
     }
     public boolean addPesanan(Pesanan baru)
     {
-        // initialise instance variables
         return false;
     }
     public void pesananDibatalkan(Pesanan pesan)
     {
-        // initialise instance variables
+        
     }
 }

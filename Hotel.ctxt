@@ -1,0 +1,25 @@
+#BlueJ class context
+comment0.params=nama\ lokasi\ bintang
+comment0.target=Hotel(java.lang.String,\ Lokasi,\ int)
+comment0.text=\r\n\ Constructor\ for\ objects\ of\ class\ Hotel\r\n
+comment1.params=bintang
+comment1.target=void\ setBintang(int)
+comment1.text=\r\n\ Method\ untuk\ memasukkan\ nilai\ bintang\r\n\ @param\ bintang\ hotel\ bintang\ ...\ \r\n
+comment2.params=nama
+comment2.target=void\ setNama(java.lang.String)
+comment2.text=\r\n\ Method\ untuk\ memasukkan\ nilai\ nama\r\n\ @param\ nama\ nama\ hotel\ \r\n
+comment3.params=lokasi
+comment3.target=void\ setLokasi(Lokasi)
+comment3.text=\r\n\ Method\ untuk\ memasukkan\ nilai\ lokasi\r\n\ @param\ lokasi\ lokasi\ hotel\ \r\n
+comment4.params=
+comment4.target=int\ getBintang()
+comment4.text=\r\n\ Method\ untuk\ mendapat\ nilai\ bintang\r\n\ @return\ hotel\ bintang\ ...\ \r\n
+comment5.params=
+comment5.target=java.lang.String\ getNama()
+comment5.text=\r\n\ Method\ untuk\ mendapat\ nilai\ nama\r\n\ @return\ nama\ hotel\ \r\n
+comment6.params=
+comment6.target=Lokasi\ getLokasi()
+comment6.text=\r\n\ Method\ untuk\ mendapat\ nilai\ lokasi\r\n\ @return\ lokasi\ hotel\ \r\n
+comment7.params=
+comment7.target=void\ printData()
+numComments=8
