@@ -16,9 +16,9 @@ public class Hotel
      */
     public Hotel(String nama, Lokasi lokasi, int bintang)
     {
-        nama = nama;
-        lokasi = lokasi;
-        bintang = bintang;
+        this.nama = nama;
+        this.lokasi = lokasi;
+        this.bintang = bintang;
     }
 
     /**
@@ -77,6 +77,9 @@ public class Hotel
     
     public void printData()
     {
-        
+        /*
+         * ini digunakan untuk memprint data
+         */
+        System.out.println("Hotel " + nama);
     }
 }

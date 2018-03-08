@@ -13,14 +13,20 @@ public class Pesanan
     private static Customer pelanggan;
     private String nama_pelanggan;
     private String jenis_kamar;
+    private static Room kamar;
 
     /**
      * Constructor for objects of class Pesanan
      */
     public Pesanan(double biaya, Customer pelanggan)
     {
-        biaya = biaya;
-        pelanggan = pelanggan;
+        this.biaya = biaya;
+        this.pelanggan = pelanggan;
+    }
+    
+    public Pesanan()
+    {
+       
     }
     
     /**
@@ -125,8 +131,35 @@ public class Pesanan
         return isSelesai;
     }
     
+    /**
+     * Method untuk mendapat nilai room
+     * @return room pelanggan yang mendaftar
+     */
+    public Room getRoom()
+    {
+        /*
+         * ini digunakan untuk mendapat nilai room
+         */
+        return kamar;
+    }
+    
+    /**
+     * Method untuk mendapat nilai room
+     * @return room pelanggan yang mendaftar
+     */
+    public void setRoom(Room kamar)
+    {
+        /*
+         * ini digunakan untuk memasukkan nilai room
+         */
+        Pesanan.kamar = kamar;
+    }
+    
     public void printData()
     {
-        
+        /*
+         * ini digunakan untuk memprint data
+         */
+        System.out.println("Biaya " + biaya);
     }
 }

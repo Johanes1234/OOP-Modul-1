@@ -54,4 +54,12 @@ public class Customer
     {
         return nama;
     }
+    
+    public void printData()
+    {
+        /*
+         * ini digunakan untuk memprint data
+         */
+        System.out.println("Nama " + nama);
+    }
 }

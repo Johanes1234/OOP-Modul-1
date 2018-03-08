@@ -1,0 +1,20 @@
+#BlueJ class context
+comment0.params=
+comment0.target=Administrasi()
+comment0.text=\r\n\ Constructor\ for\ objects\ of\ class\ Administrasi\r\n
+comment1.params=pesan\ kamar
+comment1.target=void\ pesananDitugaskan(Pesanan,\ Room)
+comment1.text=\r\n\ Method\ mengatur\ logika\ pemesanan\ dan\ pembatalan\ pesanan\r\n\ \r\n\ @param\ \ y\ \ \ a\ sample\ parameter\ for\ a\ method\r\n\ @return\ \ \ \ \ the\ sum\ of\ x\ and\ y\ \r\n
+comment2.params=pesan\ kamar
+comment2.target=void\ roomAmbilPesanan(Pesanan,\ Room)
+comment3.params=kamar
+comment3.target=void\ roomLepasPesanan(Room)
+comment4.params=kamar
+comment4.target=void\ pesananDibatalkan(Room)
+comment5.params=pesan
+comment5.target=void\ pesananDibatalkan(Pesanan)
+comment6.params=kamar
+comment6.target=void\ pesananSelesai(Room)
+comment7.params=pesan
+comment7.target=void\ pesananSelesai(Pesanan)
+numComments=8
