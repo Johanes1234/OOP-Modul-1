@@ -75,11 +75,13 @@ public class Hotel
         return lokasi;
     }
     
-    public void printData()
+    public static void printData()
     {
         /*
          * ini digunakan untuk memprint data
          */
         System.out.println("Hotel " + nama);
+        System.out.println("Hotel " + bintang);
+        System.out.println("Hotel " + lokasi);
     }
 }

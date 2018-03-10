@@ -118,8 +118,13 @@ public class Room
         Room.pesan = pesan;
     }
     
-    public void printData()
+    public static void printData()
     {
-        
+        System.out.println("Hotel " + hotel);
+        System.out.println("Nomor Kamar " + nomor_kamar);
+        System.out.println("Kamar Tersedia " + status_kamar);
+        System.out.println("Harga " + dailyTariff);
+        System.out.println("Kamar " + status_kamar);
+        System.out.println("Pelanggan " + pesan);
     }
 }

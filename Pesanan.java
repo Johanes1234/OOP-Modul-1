@@ -11,8 +11,8 @@ public class Pesanan
     private static boolean isDiproses;
     private static boolean isSelesai;
     private static Customer pelanggan;
-    private String nama_pelanggan;
-    private String jenis_kamar;
+    private static String nama_pelanggan;
+    private static String jenis_kamar;
     private static Room kamar;
 
     /**
@@ -155,11 +155,15 @@ public class Pesanan
         Pesanan.kamar = kamar;
     }
     
-    public void printData()
+    public static void printData()
     {
         /*
          * ini digunakan untuk memprint data
          */
         System.out.println("Biaya " + biaya);
+        System.out.println("Status " + isDiproses);
+        System.out.println("Status " + isSelesai);
+        System.out.println("Status " + nama_pelanggan);
+        System.out.println("Status " + jenis_kamar);
     }
 }

@@ -55,11 +55,12 @@ public class Customer
         return nama;
     }
     
-    public void printData()
+    public static void printData()
     {
         /*
          * ini digunakan untuk memprint data
          */
         System.out.println("Nama " + nama);
+        System.out.println("ID " + id);
     }
 }

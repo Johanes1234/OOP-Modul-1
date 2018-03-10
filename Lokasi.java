@@ -75,8 +75,10 @@ public class Lokasi
         return deskripsiLokasi;
     }
     
-    public void printData()
+    public static void printData()
     {
-        
+        System.out.println("Koordinat X " + x_coord);
+        System.out.println("Koordinat Y " + y_coord);
+        System.out.println("Deskripsi Lokasi " + deskripsiLokasi);
     }
 }

@@ -41,5 +41,11 @@ public class JHotel
          */
         customerid.setNama("Nandana");
         customerid.printData();
+        
+        Hotel.printData();
+        Lokasi.printData();
+        Customer.printData();
+        Room.printData();
+        Pesanan.printData();
     }
 }
