@@ -5,21 +5,20 @@
  * @author (Johanes Gunawan) 
  * @version (2018-3-8)
  */
-public class Room
+public abstract class Room
 {
     // instance variables - replace the example below with your own
     private static Hotel hotel;
-    private static int id;
     private static String nomor_kamar;
     private static boolean isAvailable;
     private static Customer customer;
-    private static double dailyTariff;
+    protected static double dailyTariff;
     private static StatusKamar status_kamar;
     private static Pesanan pesan;
     /**
      * Constructor for objects of class Room
      */
-    public Room()
+    public Room(Hotel hotel, String nomor_kamar, boolean isAvailable, StatusKamar status_kamar)
     {
        
     }
@@ -58,14 +57,14 @@ public class Room
         return hotel;
     }
     
-    public int getID()
-    {
-        return id;
-    }
-    
     public String getNomorKamar()
     {
         return nomor_kamar;
+    }
+    
+    public double getDailyTariff()
+    {
+        return dailyTariff;
     }
     
     public StatusKamar getStatusKamar()
@@ -78,14 +77,11 @@ public class Room
         return pesan;
     }
     
+    public abstract TipeKamar getTipeKamar();
+    
     public void setHotel(Hotel hotel)
     {
         Room.hotel = hotel;
-    }
-    
-    public void setID(int id)
-    {
-        Room.id = id;
     }
     
     public void setNomorKamar(String nomor_kamar)
@@ -125,6 +121,5 @@ public class Room
         System.out.println("Kamar Tersedia " + status_kamar);
         System.out.println("Harga " + dailyTariff);
         System.out.println("Kamar " + status_kamar);
-        System.out.println("Pelanggan " + pesan);
     }
 }

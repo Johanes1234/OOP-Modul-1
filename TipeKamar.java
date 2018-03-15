@@ -8,10 +8,13 @@
 public enum TipeKamar
 {
     Single("Single"), Double("Double"), Premium("Premium");
+    
     private String type;
+    
     TipeKamar(String k){
         type =  k;
     }
+    
     String gettype(){
         return type;
     }

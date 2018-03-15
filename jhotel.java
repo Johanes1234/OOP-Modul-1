@@ -30,17 +30,17 @@ public class JHotel
         Customer customerid = new Customer(10,"Johanes");
         Lokasi lokasiid = new Lokasi(3,6,"moduloop");
         Hotel hotelid = new Hotel("kuring",lokasiid,6);
-        Pesanan pesananid = new Pesanan(1506725136,customerid);
+        //Pesanan pesananid = new Pesanan(15,1506725136,customerid);
         /*
          * memanggil method print
          */
-        pesananid.printData();
-        hotelid.printData();
+        //pesananid.printData();
+        //hotelid.printData();
         /*
          * mengubah isi dan memprint 
          */
-        customerid.setNama("Nandana");
-        customerid.printData();
+        //customerid.setNama("Nandana");
+        //customerid.printData();
         
         Hotel.printData();
         Lokasi.printData();

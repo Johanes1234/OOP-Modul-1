@@ -15,8 +15,8 @@ public class Customer
      */
     public Customer(int id, String nama)
     {
-        id = id;
-        nama = nama;
+        this.id = id;
+        this.nama = nama;
     }
     
     /**

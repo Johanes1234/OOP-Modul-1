@@ -11,17 +11,19 @@ public class Pesanan
     private static boolean isDiproses;
     private static boolean isSelesai;
     private static Customer pelanggan;
-    private static String nama_pelanggan;
-    private static String jenis_kamar;
     private static Room kamar;
+    private static double jumlahHari;
 
     /**
      * Constructor for objects of class Pesanan
      */
-    public Pesanan(double biaya, Customer pelanggan)
+    public Pesanan(double jumlahHari, double biaya, Customer pelanggan, Room kamar)
     {
         this.biaya = biaya;
         this.pelanggan = pelanggan;
+        this.jumlahHari = jumlahHari;
+        this.kamar = kamar;
+        biaya = kamar.getDailyTariff() * jumlahHari;
     }
     
     public Pesanan()
@@ -33,13 +35,25 @@ public class Pesanan
      * Method untuk memasukkan nilai biaya
      * @param biaya biaya yang ditagih
      */
-    public void setBiaya (double biaya)
+    public void setBiaya()
     {
         /*
          * ini digunakan untuk memasukkan nilai biaya
          * nilai berupa double
          */
-        Pesanan.biaya = biaya;
+        biaya = kamar.getDailyTariff() * jumlahHari;
+    }
+    
+    /**
+     * Method untuk mendapat nilai room
+     * @return room pelanggan yang mendaftar
+     */
+    public void setRoom(Room kamar)
+    {
+        /*
+         * ini digunakan untuk memasukkan nilai room
+         */
+        Pesanan.kamar = kamar;
     }
     
     /**
@@ -78,6 +92,19 @@ public class Pesanan
          * nilai berupa boolean
          */
         Pesanan.isSelesai = isSelesai;
+    }
+    
+    /**
+     * Method untuk memasukkan nilai jumlah hari
+     * @param jumlah hari pelanggan yang mendaftar
+     */
+    public void setJumlahHari(double jumlahHari)
+    {
+        /*
+         * ini digunakan untuk memasukkan nilai jumlahHari
+         * nilai berupa double
+         */
+        Pesanan.jumlahHari = jumlahHari;
     }
     
     /**
@@ -144,15 +171,15 @@ public class Pesanan
     }
     
     /**
-     * Method untuk mendapat nilai room
-     * @return room pelanggan yang mendaftar
+     * Method untuk mendapat nilai jumlah hari
+     * @return jumlah hari pelanggan yang mendaftar
      */
-    public void setRoom(Room kamar)
+    public double getJumlahHari()
     {
         /*
-         * ini digunakan untuk memasukkan nilai room
+         * ini digunakan untuk mendapat nilai room
          */
-        Pesanan.kamar = kamar;
+        return jumlahHari;
     }
     
     public static void printData()
@@ -163,7 +190,7 @@ public class Pesanan
         System.out.println("Biaya " + biaya);
         System.out.println("Status " + isDiproses);
         System.out.println("Status " + isSelesai);
-        System.out.println("Status " + nama_pelanggan);
-        System.out.println("Status " + jenis_kamar);
+        System.out.println("Nama " + pelanggan);
+        System.out.println("Jumlah Hari " + jumlahHari);
     }
 }
