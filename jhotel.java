@@ -30,6 +30,8 @@ public class JHotel
         Customer customerid = new Customer(10,"Johanes");
         Lokasi lokasiid = new Lokasi(3,6,"moduloop");
         Hotel hotelid = new Hotel("kuring",lokasiid,6);
+        Room single = new SingleRoom(hotelid, "6969", true, StatusKamar.Booked);
+        Pesanan pesan = new Pesanan(13, 10000, customerid, single);
         //Pesanan pesananid = new Pesanan(15,1506725136,customerid);
         /*
          * memanggil method print
@@ -41,6 +43,12 @@ public class JHotel
          */
         //customerid.setNama("Nandana");
         //customerid.printData();
+        if(single instanceof DoubleRoom)
+        {
+            System.out.println("Benar DOuble Room");
+        }
+        else 
+        System.out.println("Salah Bukan Double Room");
         
         Hotel.printData();
         Lokasi.printData();
