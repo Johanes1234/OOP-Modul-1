@@ -10,6 +10,7 @@ public class Hotel
     private static String nama;
     private static Lokasi lokasi;
     private static int bintang;
+    private static String string;
 
     /**
      * Constructor for objects of class Hotel
@@ -73,6 +74,11 @@ public class Hotel
     public  Lokasi getLokasi()
     {
         return lokasi;
+    }
+    
+    public String toString()
+    {
+        return string;
     }
     
     public static void printData()

@@ -5,18 +5,46 @@
  * @author (Johanes Gunawan) 
  * @version (2018-02-22)
  */
+
+import java.util.Date;
+import java.util.Calendar;
+import java.util.GregorianCalendar;
+import java.util.regex.*;
+
 public class Customer
 {
     protected static int id;
     protected static String nama;
+    protected static String email;
+    protected static Date dob;
+    protected static String string;
+    String format[] = {"Year", "Month", "Date"};
+    public static final Pattern VALID_EMAIL_ADDRESS_REGEX = 
+    Pattern.compile("^[A-Z0-9._%+-]+@[A-Z0-9.-]+\\.[A-Z]{2,6}$", Pattern.CASE_INSENSITIVE);
 
     /**
      * Constructor for objects of class Customer
      */
-    public Customer(int id, String nama)
+    public Customer(int id, String nama, int tanggal, int bulan, int tahun)
     {
         this.id = id;
         this.nama = nama;
+        //this.tanggal = tanggal;
+        //this.bulan = bulan;
+        //this.tahun = tahun;
+    }
+    
+    public Customer(int id, String nama, Date dob)
+    {
+        this.id = id;
+        this.nama = nama;
+        this.dob = dob;
+    }
+    
+    public static boolean validate(String emailStr) 
+    {
+        Matcher matcher = VALID_EMAIL_ADDRESS_REGEX .matcher(emailStr);
+        return matcher.find();
     }
     
     /**
@@ -36,6 +64,24 @@ public class Customer
     {
         Customer.nama = nama;
     }
+    
+    public void setEmail(String email)
+    {
+        if(validate(email) == true)
+        {
+            Customer.email = email;
+            System.out.println("Valid");
+        }
+        else
+        {
+            System.out.println("No Valid");
+        }
+    }
+    
+    public void setDOB(Date dob)
+    {
+        Customer.dob = dob;
+    }
 
     /**
      * Method untuk mendapat nilai id
@@ -53,6 +99,21 @@ public class Customer
     public String getNama()
     {
         return nama;
+    }
+    
+    public Date getDOB()
+    {
+        return dob;
+    }
+    
+    public String getEmail()
+    {
+        return email;
+    }
+    
+    public String toString()
+    {
+        return string;
     }
     
     public static void printData()

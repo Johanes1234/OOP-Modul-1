@@ -8,11 +8,19 @@
 public enum StatusKamar
 {
     Booked("Booked"), Processed("Processed"), Vacant("Vacant");
-    private String type;
-    StatusKamar(String h){
-        type =  h;
+    private String deskripsi;
+    private String string;
+    
+    StatusKamar(String deskripsi){
+        string =  deskripsi;
     }
+    
     String gettype(){
-        return type;
+        return deskripsi;
+    }
+    
+    public String toString()
+    {
+        return string;
     }
 }

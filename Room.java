@@ -15,6 +15,8 @@ public abstract class Room
     protected static double dailyTariff;
     private static StatusKamar status_kamar;
     private static Pesanan pesan;
+    private static String string;
+    
     /**
      * Constructor for objects of class Room
      */
@@ -112,6 +114,11 @@ public abstract class Room
     public void setPesanan(Pesanan pesan)
     {
         Room.pesan = pesan;
+    }
+    
+    public String toString()
+    {
+        return string;
     }
     
     public static void printData()

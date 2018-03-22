@@ -10,6 +10,7 @@ public class Lokasi
     private static float x_coord;
     private static float y_coord;
     private static String deskripsiLokasi;
+    private static String string;
 
     /**
      * Constructor for objects of class Lokasi
@@ -73,6 +74,11 @@ public class Lokasi
     public String getDeskripsi()
     {
         return deskripsiLokasi;
+    }
+    
+    public String toString()
+    {
+        return string;
     }
     
     public static void printData()

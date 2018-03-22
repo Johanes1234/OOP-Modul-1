@@ -9,14 +9,20 @@ public enum TipeKamar
 {
     Single("Single"), Double("Double"), Premium("Premium");
     
-    private String type;
+    private String deskripsi;
+    private String string;
     
-    TipeKamar(String k){
-        type =  k;
+    TipeKamar(String deskripsi){
+        deskripsi =  deskripsi;
     }
     
     String gettype(){
-        return type;
+        return deskripsi;
+    }
+    
+    public String toString()
+    {
+        return string;
     }
 }
 

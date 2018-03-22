@@ -5,6 +5,9 @@
  * @author (Johanes Gunawan) 
  * @version (2018-02-22)
  */
+
+import java.util.Date;
+
 public class Pesanan
 {
     private static double biaya;
@@ -13,7 +16,9 @@ public class Pesanan
     private static Customer pelanggan;
     private static Room kamar;
     private static double jumlahHari;
-
+    private static Date tanggalPesan;
+    private static String string;
+    
     /**
      * Constructor for objects of class Pesanan
      */
@@ -107,6 +112,15 @@ public class Pesanan
         Pesanan.jumlahHari = jumlahHari;
     }
     
+    public void setTanggalPesan(Date tanggalPesan)
+    {
+        /*
+         * ini digunakan untuk memasukkan nilai jumlahHari
+         * nilai berupa double
+         */
+        Pesanan.tanggalPesan = tanggalPesan;
+    }
+    
     /**
      * Method untuk mendapat nilai biaya
      * @return biaya yang ditagih
@@ -180,6 +194,20 @@ public class Pesanan
          * ini digunakan untuk mendapat nilai room
          */
         return jumlahHari;
+    }
+    
+    public Date getTanggalPesan()
+    {
+        /*
+         * ini digunakan untuk memasukkan nilai jumlahHari
+         * nilai berupa double
+         */
+        return tanggalPesan;
+    }
+    
+    public String toString()
+    {
+        return string;
     }
     
     public static void printData()
