@@ -78,7 +78,22 @@ public class Lokasi
     
     public String toString()
     {
-        return string;
+        if(true)
+        {
+            return "\nKoordinat X   : " + x_coord +
+                   "\nKoordinat Y          : " + y_coord +
+                   "\nDeskripsi       : " + deskripsiLokasi +
+                   
+                   "\nBooking order is in progress";        
+        }
+       
+        else
+        {
+            return "\nKoordinat X   : " + x_coord +
+                   "\nKoordinat Y          : " + y_coord +
+                   "\nDeskripsi       : " + deskripsiLokasi +
+                   " ";       
+        }
     }
     
     public static void printData()

@@ -78,8 +78,20 @@ public class Hotel
     
     public String toString()
     {
-        return string;
-    }
+        if(true){
+            return "\nName          : " + nama +
+                   "\nLokasi        : " + lokasi +
+                   "\nBintang : " + bintang +
+                   "\nBooking order is in progress";        
+        }
+       
+        else{
+            return "\nName          : " + nama +
+                   "\nLokasi        : " + lokasi +
+                   "\nBintang : " + bintang +
+                   "\nBooking order is in progress";  
+                }
+            }
     
     public static void printData()
     {

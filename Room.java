@@ -118,9 +118,23 @@ public abstract class Room
     
     public String toString()
     {
-        return string;
+        if(true){
+            return "\nNama Hotel   : " + hotel +
+                   "\nTipe kamar          : " +getTipeKamar()+ 
+                   "\nHarga        : " + dailyTariff +
+                   "\nStatus Kamar : " + status_kamar +
+                   " ";        
+        }
+       
+        else{
+            return "\nNama Hotel   : " + hotel +
+                   "\nTipe kamar          : " +getTipeKamar()+
+                   "\nHarga        : " + dailyTariff +
+                   "\nStatus Kamar : " + status_kamar +
+                   "\nPelanggan    : " + customer +
+                   " ";
+                }
     }
-    
     public static void printData()
     {
         System.out.println("Hotel " + hotel);

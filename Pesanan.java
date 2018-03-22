@@ -10,6 +10,9 @@ import java.util.Date;
 
 public class Pesanan
 {
+    private static String nama;
+    private static int id;
+    private static Date dob;
     private static double biaya;
     private static boolean isDiproses;
     private static boolean isSelesai;
@@ -29,6 +32,23 @@ public class Pesanan
         this.jumlahHari = jumlahHari;
         this.kamar = kamar;
         biaya = kamar.getDailyTariff() * jumlahHari;
+    }
+    
+    public Pesanan(int id, String nama, int tanggal, int bulan, int tahun)
+    {
+        this.id = id;
+        this.nama = nama;
+        dob = new Date(tahun, bulan, tanggal);
+        //this.tanggal = tanggal;
+        //this.bulan = bulan;
+        //this.tahun = tahun;
+    }
+    
+    public Pesanan(int id, String nama, Date dob)
+    {
+        this.id = id;
+        this.nama = nama;
+        this.dob = dob;
     }
     
     public Pesanan()
@@ -207,7 +227,27 @@ public class Pesanan
     
     public String toString()
     {
-        return string;
+        if(true){
+            return "\nCustomer ID   : " + id +
+                   "\nName          : " + nama +
+                   "\nBiaya        : " + biaya +
+                   "\nDate of Birth : " + dob +
+                   "\nKamar         : " + kamar +
+                   "\nJumlah Hari   : " + jumlahHari +
+                   "\nTanggal Pesan : " + tanggalPesan +
+                   "\nBooking order is in progress";        
+        }
+       
+        else{
+            return "\nCustomer ID   : " + id +
+                   "\nName          : " + nama +
+                   "\nBiaya        : " + biaya +
+                   "\nDate of Birth : " + dob +
+                   "\nKamar         : " + kamar +
+                   "\nJumlah Hari   : " + jumlahHari +
+                   "\nTanggal Pesan : " + tanggalPesan +
+                   " ";
+                }
     }
     
     public static void printData()

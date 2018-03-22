@@ -10,6 +10,7 @@ import java.util.Date;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
 import java.util.regex.*;
+import java.text.*;
 
 public class Customer
 {
@@ -18,7 +19,6 @@ public class Customer
     protected static String email;
     protected static Date dob;
     protected static String string;
-    String format[] = {"Year", "Month", "Date"};
     public static final Pattern VALID_EMAIL_ADDRESS_REGEX = 
     Pattern.compile("^[A-Z0-9._%+-]+@[A-Z0-9.-]+\\.[A-Z]{2,6}$", Pattern.CASE_INSENSITIVE);
 
@@ -29,6 +29,7 @@ public class Customer
     {
         this.id = id;
         this.nama = nama;
+        dob = new Date(tahun, bulan, tanggal);
         //this.tanggal = tanggal;
         //this.bulan = bulan;
         //this.tahun = tahun;
@@ -39,6 +40,11 @@ public class Customer
         this.id = id;
         this.nama = nama;
         this.dob = dob;
+    }
+    
+    public Customer()
+    {
+
     }
     
     public static boolean validate(String emailStr) 
@@ -101,8 +107,11 @@ public class Customer
         return nama;
     }
     
-    public Date getDOB()
+    public static Date getDOB()
     {
+        DateFormat sdf = new SimpleDateFormat("'DOB : 'dd-M-yyyy");
+        String date = sdf.format(dob);
+        System.out.print(date);
         return dob;
     }
     
@@ -113,7 +122,20 @@ public class Customer
     
     public String toString()
     {
-        return string;
+        if(true){
+            return "\nCustomer ID   : " + id +
+                   "\nName          : " + nama +
+                   "\nE-Mail        : " + email +
+                   "\nDate of Birth : " + dob +
+                   "\nBooking order is in progress";        
+        }
+       
+        else{
+            return "\nCustomer ID   : " + id +
+                   "\nName          : " + nama +
+                   "\nE-Mail        : " + email +
+                   "\nDate of Birth : " + dob;        
+        }
     }
     
     public static void printData()
