@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 
 /**
  * Class Customer ini memodelkan data-data yang berhubungan dengan pesanan.
@@ -7,34 +8,59 @@
  */
 public class DatabasePesanan
 {
+    private static final Object ArrayList;
     protected String[] list_pesanan;
+    private static ArrayList<Pesanan>PESANAN_DATABASE;
+    public static int LAST_PESANAN_ID = 0;
 
     /**
      * Constructor for objects of class DatabasePesanan
      */
-    public String[] getPesananDatabase()
+    public ArrayList<Pesanan> getPesananDatabase()
     {
-        return null;
+        return ArrayList;
+    }
+
+    public int getLastPesananID()
+    {
+        return LAST_PESANAN_ID;
+    }
+
+    public boolean addPesanan(Pesanan baru)
+    {
+        return Boolean.parseBoolean(null);
     }
 
     /**
      * An example of a method - replace this comment with your own
      * 
-     * @param  y   a sample parameter for a method
-     * @return     the sum of x and y 
+     * @return     the sum of x and y
      */
     public boolean removePesanan()
     {
         return false;
     }
-    public Pesanan getPesanan(Customer cust)
+
+    public Pesanan getPesanan(Room kamar)
     {
-        return null;
+        return Pesanan.parsePesanan(Pesanan.parsePesanan(null));
     }
-    public boolean addPesanan(Pesanan baru)
+
+    public Pesanan getPesanan(int id)
     {
-        return false;
+        return 0;
     }
+
+    public Pesanan getPesananAktif(Customer pelanggan)
+    {
+        return pelanggan;
+    }
+
+    public boolean removePesanan(Pesanan pesan)
+    {
+        return pesan;
+    }
+
     public void pesananDibatalkan(Pesanan pesan)
     {
         

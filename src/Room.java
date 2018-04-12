@@ -10,7 +10,7 @@ public abstract class Room
     // instance variables - replace the example below with your own
     private static Hotel hotel;
     private static String nomor_kamar;
-    private static boolean isAvailable;
+    //private static boolean isAvailable;
     private static Customer customer;
     protected static double dailyTariff;
     private static StatusKamar status_kamar;
@@ -20,7 +20,7 @@ public abstract class Room
     /**
      * Constructor for objects of class Room
      */
-    public Room(Hotel hotel, String nomor_kamar, boolean isAvailable, StatusKamar status_kamar)
+    public Room(Hotel hotel, String nomor_kamar, StatusKamar status_kamar)
     {
        
     }
@@ -49,10 +49,10 @@ public abstract class Room
         return customer;
     }
     
-    public boolean getStatusAvailable()
-    {
-        return isAvailable;
-    }
+    //public boolean getStatusAvailable()
+    //{
+    //    return isAvailable;
+    //}
     
     public Hotel getHotel()
     {
@@ -91,10 +91,10 @@ public abstract class Room
         Room.nomor_kamar = nomor_kamar;
     }
     
-    public void setStatusAvailable(boolean isAvailable)
-    {
-        Room.isAvailable = isAvailable;
-    }
+    //public void setStatusAvailable(boolean isAvailable)
+    //{
+    //    Room.isAvailable = isAvailable;
+    //}
     
     public void setCustomer(Customer customer)
     {

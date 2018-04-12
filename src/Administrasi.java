@@ -19,7 +19,7 @@ public class Administrasi
     /**
      * Method mengatur logika pemesanan dan pembatalan pesanan
      * 
-     * @param  y   a sample parameter for a method
+     * @param  pesan   a sample parameter for a method
      * @return     the sum of x and y 
      */
     public void pesananDitugaskan(Pesanan pesan, Room kamar)
@@ -48,6 +48,7 @@ public class Administrasi
         pesanwhile = kamar.getPesanan();
         pesanwhile.setStatusSelesai(false);
         pesanwhile.setStatusDiproses(false);
+        pesanwhile.setStatusAktif(false);
         pesanwhile.setRoom(null);
         kamar.setPesanan(pesanwhile);
         
@@ -60,6 +61,7 @@ public class Administrasi
         
         pesan.setStatusSelesai(false);
         pesan.setStatusDiproses(false);
+        pesan.setStatusAktif(false);
         pesan.setRoom(null);
     }
     
@@ -69,6 +71,7 @@ public class Administrasi
         pesanwhile = kamar.getPesanan();
         pesanwhile.setStatusSelesai(true);
         pesanwhile.setStatusDiproses(false);
+        pesanwhile.setStatusAktif(false);
         pesanwhile.setRoom(null);
         kamar.setPesanan(pesanwhile);
         
@@ -81,6 +84,7 @@ public class Administrasi
         
         pesan.setStatusSelesai(true);
         pesan.setStatusDiproses(false);
+        pesan.setStatusAktif(false);
         pesan.setRoom(null);
     }
 }

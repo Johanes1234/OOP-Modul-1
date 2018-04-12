@@ -11,26 +11,27 @@ import java.util.Date;
 public class Pesanan
 {
     private static String nama;
-    private static int id;
+    private static int id = DatabasePesanan.LAST_PESANAN_ID + 1;
     private static Date dob;
     private static double biaya;
     private static boolean isDiproses;
     private static boolean isSelesai;
+    private static boolean isAktif;
     private static Customer pelanggan;
     private static Room kamar;
     private static double jumlahHari;
     private static Date tanggalPesan;
     private static String string;
-    
+
     /**
      * Constructor for objects of class Pesanan
      */
-    public Pesanan(double jumlahHari, double biaya, Customer pelanggan, Room kamar)
+    public Pesanan(double jumlahHari, double biaya, Customer pelanggan)
     {
         this.biaya = biaya;
         this.pelanggan = pelanggan;
         this.jumlahHari = jumlahHari;
-        this.kamar = kamar;
+        //this.kamar = kamar;
         biaya = kamar.getDailyTariff() * jumlahHari;
     }
     
@@ -38,7 +39,8 @@ public class Pesanan
     {
         this.id = id;
         this.nama = nama;
-        dob = new Date(tahun, bulan, tanggal);
+        this.isAktif = true;
+        //dob = new Date(tahun, bulan, tanggal);
         //this.tanggal = tanggal;
         //this.bulan = bulan;
         //this.tahun = tahun;
@@ -55,10 +57,12 @@ public class Pesanan
     {
        
     }
-    
+
+    public static int parsePesanan(Object o) { return 0;
+    }
+
     /**
      * Method untuk memasukkan nilai biaya
-     * @param biaya biaya yang ditagih
      */
     public void setBiaya()
     {
@@ -80,10 +84,26 @@ public class Pesanan
          */
         Pesanan.kamar = kamar;
     }
+
+    public void setID(int id)
+    {
+        /*
+         * ini digunakan untuk memasukkan nilai id
+         */
+        Pesanan.id = id;
+    }
+
+    public void setStatusAktif(boolean aktif)
+    {
+        /*
+         * ini digunakan untuk memasukkan nilai status
+         */
+        Pesanan.isAktif = aktif;
+    }
     
     /**
      * Method untuk memasukkan nilai pelanggan
-     * @param pelanggan pelanggan yang mendaftar
+     * @param baru pelanggan yang mendaftar
      */
     public void setPelanggan (Customer baru)
     {
@@ -95,7 +115,7 @@ public class Pesanan
     
     /**
      * Method untuk memasukkan nilai isDiproses
-     * @param isDiproses status pesanan pelanggan yang mendaftar
+     * @param diproses status pesanan pelanggan yang mendaftar
      */
     public void setStatusDiproses (boolean diproses)
     {
@@ -108,7 +128,7 @@ public class Pesanan
     
     /**
      * Method untuk memasukkan nilai isSelesai
-     * @param isSelesai status pesanan pelanggan yang selesai
+     * @param diproses status pesanan pelanggan yang selesai
      */
     public void setStatusSelesai (boolean diproses)
     {
@@ -121,7 +141,7 @@ public class Pesanan
     
     /**
      * Method untuk memasukkan nilai jumlah hari
-     * @param jumlah hari pelanggan yang mendaftar
+     * @param jumlahHari hari pelanggan yang mendaftar
      */
     public void setJumlahHari(double jumlahHari)
     {
@@ -190,6 +210,24 @@ public class Pesanan
          * nilai berupa boolean
          */
         return isSelesai;
+    }
+
+    public boolean getStatusAktif()
+    {
+        /*
+         * ini digunakan untuk mendapat nilai status aktif
+         * nilai berupa boolean
+         */
+        return isAktif;
+    }
+
+    public int getID()
+    {
+        /*
+         * ini digunakan untuk mendapat nilai id
+         * nilai berupa integer
+         */
+        return id;
     }
     
     /**
