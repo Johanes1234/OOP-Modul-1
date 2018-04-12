@@ -10,7 +10,7 @@ public class DatabasePesanan
 {
     private static final Object ArrayList;
     protected String[] list_pesanan;
-    private static ArrayList<Pesanan>PESANAN_DATABASE;
+    private static ArrayList<Pesanan> PESANAN_DATABASE = new ArrayList<Pesanan>();
     public static int LAST_PESANAN_ID = 0;
 
     /**
@@ -26,9 +26,25 @@ public class DatabasePesanan
         return LAST_PESANAN_ID;
     }
 
-    public boolean addPesanan(Pesanan baru)
+    public static boolean addPesanan(Pesanan baru)
     {
-        return Boolean.parseBoolean(null);
+        if(PESANAN_DATABASE.contains(baru))
+        {
+            if(baru.getStatusAktif())
+            {
+                return false;
+            }
+            else
+            {
+                PESANAN_DATABASE.add(baru);
+                return true;
+            }
+        }
+        else
+        {
+            PESANAN_DATABASE.add(baru);
+            return true;
+        }
     }
 
     /**
@@ -41,24 +57,74 @@ public class DatabasePesanan
         return false;
     }
 
-    public Pesanan getPesanan(Room kamar)
+    public static Pesanan getPesanan(Room kamar)
     {
-        return Pesanan.parsePesanan(Pesanan.parsePesanan(null));
+        for(Pesanan pesanan : PESANAN_DATABASE)
+        {
+            if(pesanan.getRoom().equals(kamar))
+            {
+                return pesanan;
+            }
+        }
+
+        return null;
     }
 
-    public Pesanan getPesanan(int id)
+    public static Pesanan getPesanan(int id)
     {
-        return 0;
+        for(Pesanan pesanan : PESANAN_DATABASE)
+        {
+            if(pesanan.getId() == id)
+            {
+                return pesanan;
+            }
+        }
+
+        return null;
     }
 
-    public Pesanan getPesananAktif(Customer pelanggan)
+    public static Pesanan getPesananAktif(Customer pelanggan)
     {
-        return pelanggan;
+        for(Pesanan pesanan : PESANAN_DATABASE)
+        {
+            if(pesanan.getPelanggan().equals(pelanggan))
+            {
+                if(pesanan.getStatusAktif())
+                {
+                    return pesanan;
+                }
+            }
+        }
+
+        return null;
     }
 
-    public boolean removePesanan(Pesanan pesan)
+    public static boolean removePesanan(Pesanan pesan)
     {
-        return pesan;
+        for(Pesanan pesanan : PESANAN_DATABASE)
+        {
+            if(pesanan.equals(pesan))
+            {
+                if(pesanan.getRoom() != null)
+                {
+                    Administrasi.pesananDibatalkan(pesanan);
+                }
+                else
+                {
+                    if(pesanan.getStatusAktif())
+                    {
+                        pesanan.setStatusAktif(false);
+                    }
+                }
+
+                if(PESANAN_DATABASE.remove(pesanan))
+                {
+                    return true;
+                }
+            }
+        }
+
+        return false;
     }
 
     public void pesananDibatalkan(Pesanan pesan)
