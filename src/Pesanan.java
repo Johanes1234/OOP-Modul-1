@@ -299,4 +299,7 @@ public class Pesanan
         System.out.println("Nama " + pelanggan);
         System.out.println("Jumlah Hari " + jumlahHari);
     }
+
+    public boolean getId() {
+    }
 }

@@ -8,20 +8,19 @@ import java.util.ArrayList;
  */
 public class DatabasePesanan
 {
-    private static final Object ArrayList;
-    protected String[] list_pesanan;
+    //protected String[] list_pesanan;
     private static ArrayList<Pesanan> PESANAN_DATABASE = new ArrayList<Pesanan>();
     public static int LAST_PESANAN_ID = 0;
 
     /**
      * Constructor for objects of class DatabasePesanan
      */
-    public ArrayList<Pesanan> getPesananDatabase()
+    public static ArrayList<Pesanan> getPesananDatabase()
     {
-        return ArrayList;
+        return PESANAN_DATABASE;
     }
 
-    public int getLastPesananID()
+    public static int getLastPesananID()
     {
         return LAST_PESANAN_ID;
     }
