@@ -11,7 +11,7 @@ import java.util.Date;
 public class Pesanan
 {
     private static String nama;
-    private static int id = DatabasePesanan.LAST_PESANAN_ID + 1;
+    private static int id = DatabasePesanan.getLastPesananID() + 1;
     private static Date dob;
     private static double biaya;
     private static boolean isDiproses;
@@ -301,5 +301,6 @@ public class Pesanan
     }
 
     public boolean getId() {
+        return false;
     }
 }

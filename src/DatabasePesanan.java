@@ -73,7 +73,7 @@ public class DatabasePesanan
     {
         for(Pesanan pesanan : PESANAN_DATABASE)
         {
-            if(pesanan.getId() == id)
+            if(pesanan.getID() == id)
             {
                 return pesanan;
             }

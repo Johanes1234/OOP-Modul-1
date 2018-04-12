@@ -55,7 +55,7 @@ public class Administrasi
         roomLepasPesanan(kamar);
     }
     
-    public void pesananDibatalkan(Pesanan pesan)
+    public static void pesananDibatalkan(Pesanan pesan)
     {
         roomLepasPesanan(pesan.getRoom());
         
