@@ -262,7 +262,31 @@ public class Pesanan
          */
         return tanggalPesan;
     }
-    
+
+    public String toString()
+    {
+        // digunakan untuk menampilkan nilai biaya pada terminal
+
+        String final_status = "KOSONG";
+
+        if(isDiproses == true && isSelesai == false){
+            final_status = "DIPROSES";
+        }
+        else if(isDiproses == false && isSelesai == false){
+            final_status = "KOSONG";
+        }
+        else if(isDiproses == false && isSelesai == true){
+            final_status = "SELESAI";
+        }
+
+        return "\n\nDibuat oleh " + pelanggan.getNama() +
+                ". Proses booking untuk " + kamar.getHotel() +
+                " kamar nomor " + kamar.getNomorKamar() +
+                " dengan tipe kamar yang diinginkan " + kamar.getTipeKamar() +
+                ". Status : " + final_status + ".";
+
+    }
+    /*
     public String toString()
     {
         if(true){
@@ -287,7 +311,7 @@ public class Pesanan
                    " ";
                 }
     }
-    
+    */
     public static void printData()
     {
         /*
