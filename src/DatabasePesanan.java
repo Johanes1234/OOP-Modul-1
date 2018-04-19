@@ -100,7 +100,7 @@ public class DatabasePesanan
         return null;
     }
 
-    public static boolean removePesanan(Pesanan pesan) throws PesananTidakDitemukanException
+    public static boolean removePesanan(Customer pesan) throws PesananTidakDitemukanException
     {
         for(Pesanan pesanan : PESANAN_DATABASE)
         {

@@ -30,12 +30,13 @@ public class DatabaseHotel
      * @param  baru  a sample parameter for a method
      * @return    the sum of x and y
      */
-    public static boolean addHotel(Hotel baru)
+    public static boolean addHotel(Hotel baru) throws HotelSudahAdaException
     {
         for (int i = 0; i < HOTEL_DATABASE.size(); i++) {
             Hotel tes = HOTEL_DATABASE.get(i);
-            if (tes.getID()==baru.getID()){
-                return false;
+            if (tes.getID()== baru.getID() || tes.getNama() == baru.getNama()){
+                //return false;
+                throw new HotelSudahAdaException(baru);
             }
         }
         LAST_HOTEL_ID=baru.getID();
@@ -43,7 +44,7 @@ public class DatabaseHotel
         return true;
     }
 
-    public static boolean removeHotel(int id)
+    public static boolean removeHotel(int id) throws HotelTidakDitemukanException
     {
         for (int i = 0; i < HOTEL_DATABASE.size(); i++) {
             Hotel tes = HOTEL_DATABASE.get(i);
@@ -51,7 +52,14 @@ public class DatabaseHotel
                 ArrayList<Room> KAMAR_TEST = DatabaseRoom.getRoomsFromHotel(tes);
                 for (int x = 0; x < KAMAR_TEST.size(); x++){
                     Room kamar = KAMAR_TEST.get(x);
-                    DatabaseRoom.removeRoom(tes, kamar.getNomorKamar());
+                    try
+                    {
+                        DatabaseRoom.removeRoom(tes, kamar.getNomorKamar());
+                    }
+                    catch (RoomTidakDitemukanException e)
+                    {
+                        System.out.println(e.getPesan());
+                    }
                 }
                 if(HOTEL_DATABASE.remove(tes))
                 {
@@ -59,7 +67,8 @@ public class DatabaseHotel
                 }
             }
         }
-        return false;
+        //return false;
+        throw new HotelTidakDitemukanException(id);
     }
 
     public static Hotel getHotel(int id){

@@ -23,12 +23,13 @@ public class DatabaseCustomer
         return LAST_CUSTOMER_ID;
     }
 
-    public static boolean addCustomer(Customer baru)
+    public static boolean addCustomer(Customer baru) throws PelangganSudahAdaException
     {
         for (int i = 0; i < CUSTOMER_DATABASE.size(); i++) {
             Customer tes = CUSTOMER_DATABASE.get(i);
             if (tes.getID()==baru.getID()){
-                return false;
+                //return false;
+                throw new PelangganSudahAdaException(baru);
             }
         }
         CUSTOMER_DATABASE.add(baru);
@@ -58,31 +59,17 @@ public class DatabaseCustomer
 
     public static boolean removeCustomer(int id) throws PelangganTidakDitemukanException
     {
-        try
-        {
-            for (int i = 0; i < CUSTOMER_DATABASE.size(); i++) {
-                Customer tes = CUSTOMER_DATABASE.get(i);
-                if (tes.getID() == id) {
-                    Pesanan pesan = DatabasePesanan.getPesananAktif(tes);
-                    DatabasePesanan.removePesanan(pesan);
-                    if (CUSTOMER_DATABASE.remove(tes)) {
-                        return true;
-                    }
-                }
-            }
-        }
-        catch(Exception){PesananTidakDitemukanException()};
-        return false;
-        throw new PelangganTidakDitemukanException(id);
-    }
-
-    public static boolean addCustomer(Customer baru) throws PelangganSudahAdaException
-    {
         for (int i = 0; i < CUSTOMER_DATABASE.size(); i++) {
             Customer tes = CUSTOMER_DATABASE.get(i);
-            if (baru == tes.getID()){
+            if (tes.getID() == id){
                 Pesanan pesan = DatabasePesanan.getPesananAktif(tes);
-                DatabasePesanan.removePesanan(pesan);
+                try
+                {
+                    DatabasePesanan.removePesanan(tes);
+                }catch(PesananTidakDitemukanException e)
+                {
+                    System.out.println(e.getPesan());
+                }
                 if(CUSTOMER_DATABASE.remove(tes))
                 {
                     return true;
@@ -90,6 +77,6 @@ public class DatabaseCustomer
             }
         }
         //return false;
-        throw new PelangganSudahAdaException(baru);
+        throw new PelangganTidakDitemukanException(id);
     }
 }
