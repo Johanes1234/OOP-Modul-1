@@ -26,18 +26,19 @@ public class Pesanan
     /**
      * Constructor for objects of class Pesanan
      */
-    public Pesanan(double jumlahHari, double biaya, Customer pelanggan)
+    public Pesanan(double jumlahHari, Customer pelanggan)
     {
-        this.biaya = biaya;
+        //this.biaya = biaya;
         this.pelanggan = pelanggan;
         this.jumlahHari = jumlahHari;
         //this.kamar = kamar;
-        biaya = kamar.getDailyTariff() * jumlahHari;
+        //biaya = kamar.getDailyTariff() * jumlahHari;
+        id = DatabasePesanan.getLastPesananID() + 1;
     }
     
     public Pesanan(int id, String nama, int tanggal, int bulan, int tahun)
     {
-        this.id = id;
+
         this.nama = nama;
         this.isAktif = true;
         //dob = new Date(tahun, bulan, tanggal);

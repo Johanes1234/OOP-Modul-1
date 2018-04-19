@@ -22,7 +22,7 @@ public class Administrasi
      * @param  pesan   a sample parameter for a method
      * @return     the sum of x and y 
      */
-    public void pesananDitugaskan(Pesanan pesan, Room kamar)
+    public static void pesananDitugaskan(Pesanan pesan, Room kamar)
     {
        pesan.setStatusSelesai(false);
        pesan.setStatusDiproses(true);
@@ -30,19 +30,19 @@ public class Administrasi
        roomAmbilPesanan(pesan, kamar);
     }
     
-    public void roomAmbilPesanan(Pesanan pesan, Room kamar)
+    public static void roomAmbilPesanan(Pesanan pesan, Room kamar)
     {
         kamar.setStatusKamar(StatusKamar.Booked);
         kamar.setPesanan(pesan);
     }
     
-    public void roomLepasPesanan(Room kamar)
+    public static void roomLepasPesanan(Room kamar)
     {
         kamar.setStatusKamar(StatusKamar.Vacant);
         kamar.setPesanan(null);
     }
     
-    public void pesananDibatalkan(Room kamar)
+    public static void pesananDibatalkan(Room kamar)
     {
         Pesanan pesanwhile = new Pesanan();
         pesanwhile = kamar.getPesanan();
@@ -65,7 +65,7 @@ public class Administrasi
         pesan.setRoom(null);
     }
     
-    public void pesananSelesai(Room kamar)
+    public static void pesananSelesai(Room kamar)
     {
         Pesanan pesanwhile = new Pesanan();
         pesanwhile = kamar.getPesanan();
@@ -78,7 +78,7 @@ public class Administrasi
         roomLepasPesanan(kamar);
     }
     
-    public void pesananSelesai(Pesanan pesan)
+    public static void pesananSelesai(Pesanan pesan)
     {
         roomLepasPesanan(pesan.getRoom());
         

@@ -25,13 +25,14 @@ public class DatabasePesanan
         return LAST_PESANAN_ID;
     }
 
-    public static boolean addPesanan(Pesanan baru)
+    public static boolean addPesanan(Pesanan baru) throws PesananSudahAdaException
     {
         if(PESANAN_DATABASE.contains(baru))
         {
             if(baru.getStatusAktif())
             {
-                return false;
+                //return false;
+                throw new PesananSudahAdaException(baru);
             }
             else
             {
@@ -51,10 +52,11 @@ public class DatabasePesanan
      * 
      * @return     the sum of x and y
      */
-    public boolean removePesanan()
+    /*public boolean removePesanan()
     {
         return false;
     }
+    */
 
     public static Pesanan getPesanan(Room kamar)
     {
@@ -98,7 +100,7 @@ public class DatabasePesanan
         return null;
     }
 
-    public static boolean removePesanan(Pesanan pesan)
+    public static boolean removePesanan(Pesanan pesan) throws PesananTidakDitemukanException
     {
         for(Pesanan pesanan : PESANAN_DATABASE)
         {
@@ -123,7 +125,8 @@ public class DatabasePesanan
             }
         }
 
-        return false;
+        //return false;
+        throw new PesananTidakDitemukanException(pesan);
     }
 
     public void pesananDibatalkan(Pesanan pesan)

@@ -23,7 +23,7 @@ public class JHotel
     /**
      * An example of a method - replace this comment with your own
      * 
-     * @param  y   a sample parameter for a method
+     * @param  args   a sample parameter for a method
      * @return     the sum of x and y 
      */
     public static void main(String args[])
@@ -76,36 +76,36 @@ public class JHotel
         DatabaseCustomer.addCustomer(new Customer("Jan", 13, 05,2018));
         System.out.println("Data ");
 
-        for(Customer coba1: DatabaseCustomer.getCustomerDatabase())
+        for(Customer test: DatabaseCustomer.getCustomerDatabase())
         {
-            System.out.println(coba1);
+            System.out.println(test);
         }
 
         DatabaseHotel.addHotel(new Hotel ("Ambian", new Lokasi(13,13,"depan"), 5));
         DatabaseHotel.addHotel(new Hotel ("Beethoven", new Lokasi(23,23,"tengah"), 5));
         DatabaseHotel.addHotel(new Hotel ("Canon", new Lokasi(14,14,"belakang"), 5));
 
-        for(Hotel coba2: DatabaseHotel.getHotelDatabase())
+        for(Hotel test2: DatabaseHotel.getHotelDatabase())
         {
-            System.out.println(coba2);
+            System.out.println(test2);
         }
 
         DatabaseRoom.addRoom(new SingleRoom(DatabaseHotel.getHotel(1), "B1"));
         DatabaseRoom.addRoom(new DoubleRoom(DatabaseHotel.getHotel(2), "D2"));
         DatabaseRoom.addRoom(new PremiumRoom(DatabaseHotel.getHotel(3), "C3"));
 
-        for(Room coba3: DatabaseRoom.getRoomDatabase())
+        for(Room test3: DatabaseRoom.getRoomDatabase())
         {
-            System.out.println(coba3);
+            System.out.println(test3);
         }
 
         DatabasePesanan.addPesanan(new Pesanan(21,DatabaseCustomer.getCustomer(1)));
         DatabasePesanan.addPesanan(new Pesanan(42,DatabaseCustomer.getCustomer(2)));
         DatabasePesanan.addPesanan(new Pesanan(33,DatabaseCustomer.getCustomer(3)));
 
-        for(Pesanan coba4: DatabasePesanan.getPesananDatabase())
+        for(Pesanan test4: DatabasePesanan.getPesananDatabase())
         {
-            System.out.println(coba4);
+            System.out.println(test4);
         }
 
         Administrasi.pesananDitugaskan(DatabasePesanan.getPesananAktif(DatabaseCustomer.getCustomer(1)), DatabaseRoom.getRoom(DatabaseHotel.getHotel(1), "B1"));
@@ -113,18 +113,18 @@ public class JHotel
         Administrasi.pesananDitugaskan(DatabasePesanan.getPesananAktif(DatabaseCustomer.getCustomer(2)), DatabaseRoom.getRoom(DatabaseHotel.getHotel(1), "C3"));
 
 
-        for (Pesanan coba5: DatabasePesanan.getPesananDatabase())
+        for (Pesanan test5: DatabasePesanan.getPesananDatabase())
         {
-            System.out.println(coba5);
+            System.out.println(test5);
         }
 
         Administrasi.pesananDibatalkan(DatabasePesanan.getPesananAktif(DatabaseCustomer.getCustomer(2)));
         Administrasi.pesananSelesai(DatabasePesanan.getPesananAktif(DatabaseCustomer.getCustomer(1)));
         Administrasi.pesananSelesai(DatabasePesanan.getPesananAktif(DatabaseCustomer.getCustomer(3)));
 
-        for (Pesanan coba6 :DatabasePesanan.getPesananDatabase())
+        for (Pesanan test6 :DatabasePesanan.getPesananDatabase())
         {
-            System.out.println(coba6);
+            System.out.println(test6);
         }
     }
 }

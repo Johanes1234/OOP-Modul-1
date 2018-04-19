@@ -16,7 +16,7 @@ public class Hotel
     /**
      * Constructor for objects of class Hotel
      */
-    public Hotel(String nama, Lokasi lokasi, int bintang, int id)
+    public Hotel(String nama, Lokasi lokasi, int bintang)
     {
         this.nama = nama;
         this.lokasi = lokasi;

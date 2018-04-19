@@ -25,9 +25,9 @@ public class Customer
     /**
      * Constructor for objects of class Customer
      */
-    public Customer(int id, String nama, int tanggal, int bulan, int tahun)
+    public Customer(String nama, int tanggal, int bulan, int tahun, String email)
     {
-        this.id = id;
+        id = DatabaseCustomer.getLastCustomerID() + 1;
         this.nama = nama;
         dob = new Date(tahun, bulan, tanggal);
         //this.tanggal = tanggal;
@@ -35,7 +35,7 @@ public class Customer
         //this.tahun = tahun;
     }
     
-    public Customer(int id, String nama, Date dob)
+    public Customer(int id, String nama, Date dob, String email)
     {
         this.id = id;
         this.nama = nama;

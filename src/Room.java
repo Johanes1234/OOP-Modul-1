@@ -20,9 +20,11 @@ public abstract class Room
     /**
      * Constructor for objects of class Room
      */
-    public Room(Hotel hotel, String nomor_kamar, StatusKamar status_kamar)
+    public Room(Hotel hotel, String nomor_kamar)
     {
-       
+       this.hotel = hotel;
+       this.nomor_kamar = nomor_kamar;
+       status_kamar = StatusKamar.Vacant;
     }
 
     /**

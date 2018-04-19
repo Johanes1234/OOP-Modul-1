@@ -56,11 +56,31 @@ public class DatabaseCustomer
     }
 
 
-    public static boolean removeCustomer(int id)
+    public static boolean removeCustomer(int id) throws PelangganTidakDitemukanException
+    {
+        try
+        {
+            for (int i = 0; i < CUSTOMER_DATABASE.size(); i++) {
+                Customer tes = CUSTOMER_DATABASE.get(i);
+                if (tes.getID() == id) {
+                    Pesanan pesan = DatabasePesanan.getPesananAktif(tes);
+                    DatabasePesanan.removePesanan(pesan);
+                    if (CUSTOMER_DATABASE.remove(tes)) {
+                        return true;
+                    }
+                }
+            }
+        }
+        catch(Exception){PesananTidakDitemukanException()};
+        return false;
+        throw new PelangganTidakDitemukanException(id);
+    }
+
+    public static boolean addCustomer(Customer baru) throws PelangganSudahAdaException
     {
         for (int i = 0; i < CUSTOMER_DATABASE.size(); i++) {
             Customer tes = CUSTOMER_DATABASE.get(i);
-            if (tes.getID()==id){
+            if (baru == tes.getID()){
                 Pesanan pesan = DatabasePesanan.getPesananAktif(tes);
                 DatabasePesanan.removePesanan(pesan);
                 if(CUSTOMER_DATABASE.remove(tes))
@@ -69,6 +89,7 @@ public class DatabaseCustomer
                 }
             }
         }
-        return false;
+        //return false;
+        throw new PelangganSudahAdaException(baru);
     }
 }
