@@ -1,0 +1,9 @@
+#BlueJ class context
+comment0.params=baru
+comment0.target=boolean\ addCustomer(Customer)
+comment0.text=\r\n\ Constructor\ for\ objects\ of\ class\ DatabaseCustomer\r\n
+comment1.params=id
+comment1.target=boolean\ removeCustomer(int)
+comment2.params=
+comment2.target=java.lang.String[]\ getCustomerDatabase()
+numComments=3

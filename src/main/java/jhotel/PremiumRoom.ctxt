@@ -1,0 +1,14 @@
+#BlueJ class context
+comment0.params=hotel\ nomor_kamar\ isAvailable\ status_kamar
+comment0.target=PremiumRoom(Hotel,\ java.lang.String,\ boolean,\ StatusKamar)
+comment0.text=\r\n\ Constructor\ for\ objects\ of\ class\ PremiumRoom\r\n
+comment1.params=
+comment1.target=TipeKamar\ getTipeKamar()
+comment1.text=\r\n\ An\ example\ of\ a\ method\ -\ replace\ this\ comment\ with\ your\ own\r\n\ \r\n\ @param\ \ y\ \ \ a\ sample\ parameter\ for\ a\ method\r\n\ @return\ \ \ \ \ the\ sum\ of\ x\ and\ y\ \r\n
+comment2.params=
+comment2.target=double\ getDiscount()
+comment2.text=\r\n\ An\ example\ of\ a\ method\ -\ replace\ this\ comment\ with\ your\ own\r\n\ \r\n\ @param\ \ y\ \ \ a\ sample\ parameter\ for\ a\ method\r\n\ @return\ \ \ \ \ the\ sum\ of\ x\ and\ y\ \r\n
+comment3.params=dailyTariff
+comment3.target=void\ setDailyTariff(double)
+comment3.text=\r\n\ An\ example\ of\ a\ method\ -\ replace\ this\ comment\ with\ your\ own\r\n\ \r\n\ @param\ \ y\ \ \ a\ sample\ parameter\ for\ a\ method\r\n\ @return\ \ \ \ \ the\ sum\ of\ x\ and\ y\ \r\n
+numComments=4
