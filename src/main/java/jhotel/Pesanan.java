@@ -213,7 +213,7 @@ public class Pesanan
         return isSelesai;
     }
 
-    public boolean getStatusAktif()
+    public static boolean getStatusAktif()
     {
         /*
          * ini digunakan untuk mendapat nilai status aktif

@@ -24,10 +24,17 @@ public class Administrasi
      */
     public static void pesananDitugaskan(Pesanan pesan, Room kamar)
     {
-       pesan.setStatusSelesai(false);
-       pesan.setStatusDiproses(true);
-       pesan.setRoom(kamar);
-       roomAmbilPesanan(pesan, kamar);
+       if (kamar.getStatusKamar() == StatusKamar.Vacant)
+       {
+           pesan.setStatusSelesai(false);
+           pesan.setStatusDiproses(true);
+           pesan.setRoom(kamar);
+           roomAmbilPesanan(pesan, kamar);
+       }
+       else
+       {
+           pesan.setStatusAktif(false);
+       }
     }
     
     public static void roomAmbilPesanan(Pesanan pesan, Room kamar)
@@ -45,7 +52,7 @@ public class Administrasi
     public static void pesananDibatalkan(Room kamar)
     {
         Pesanan pesanwhile = new Pesanan();
-        pesanwhile = kamar.getPesanan();
+        pesanwhile = kamar.getPesananAktif();
         pesanwhile.setStatusSelesai(false);
         pesanwhile.setStatusDiproses(false);
         pesanwhile.setStatusAktif(false);
@@ -62,13 +69,13 @@ public class Administrasi
         pesan.setStatusSelesai(false);
         pesan.setStatusDiproses(false);
         pesan.setStatusAktif(false);
-        pesan.setRoom(null);
+        //pesan.setRoom(null);
     }
     
     public static void pesananSelesai(Room kamar)
     {
         Pesanan pesanwhile = new Pesanan();
-        pesanwhile = kamar.getPesanan();
+        pesanwhile = kamar.getPesananAktif();
         pesanwhile.setStatusSelesai(true);
         pesanwhile.setStatusDiproses(false);
         pesanwhile.setStatusAktif(false);
@@ -85,6 +92,6 @@ public class Administrasi
         pesan.setStatusSelesai(true);
         pesan.setStatusDiproses(false);
         pesan.setStatusAktif(false);
-        pesan.setRoom(null);
+        //pesan.setRoom(null);
     }
 }

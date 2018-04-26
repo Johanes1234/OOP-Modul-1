@@ -59,13 +59,16 @@ public class DatabasePesanan
     }
     */
 
-    public static Pesanan getPesanan(Room kamar)
+    public static Pesanan getPesananAktif(Room kamar)
     {
         for(Pesanan pesanan : PESANAN_DATABASE)
         {
             if(pesanan.getRoom().equals(kamar))
             {
-                return pesanan;
+                if(Pesanan.getStatusAktif() == true)
+                {
+                    return pesanan;
+                }
             }
         }
 

@@ -19,6 +19,7 @@ public class Customer
     protected static String email;
     protected static Date dob;
     protected static String string;
+    protected static String password;
     public static final Pattern VALID_EMAIL_ADDRESS_REGEX = 
     Pattern.compile("^[A-Z0-9._%+-]+@[A-Z0-9.-]+\\.[A-Z]{2,6}$", Pattern.CASE_INSENSITIVE);
 
@@ -35,14 +36,16 @@ public class Customer
         //this.tahun = tahun;
     }
     
-    public Customer(int id, String nama, Date dob, String email)
+    public Customer(int id, String nama, Date dob, String email, String password)
     {
         Customer.id = id;
         Customer.nama = nama;
         Customer.dob = dob;
+        Customer.email = email;
+        Customer.password = password;
     }
     
-    public Customer()
+    public Customer(String name, int i, int i1, int i2, String email, String password)
     {
 
     }
@@ -89,6 +92,11 @@ public class Customer
         Customer.dob = dob;
     }
 
+    public void setPassword(String password)
+    {
+        Customer.password = password;
+    }
+
     /**
      * Method untuk mendapat nilai id
      * @return id pelanggan
@@ -106,6 +114,11 @@ public class Customer
     {
         return nama;
     }
+
+    public static String getPassword()
+    {
+        return password;
+    }
     
     public static Date getDOB()
     {
@@ -115,7 +128,7 @@ public class Customer
         return dob;
     }
     
-    public String getEmail()
+    public static String getEmail()
     {
         return email;
     }

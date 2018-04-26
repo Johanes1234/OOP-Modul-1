@@ -71,12 +71,12 @@ public abstract class Room
         return dailyTariff;
     }
     
-    public StatusKamar getStatusKamar()
+    public static StatusKamar getStatusKamar()
     {
         return status_kamar;
     }
     
-    public Pesanan getPesanan()
+    public Pesanan getPesananAktif()
     {
         return pesan;
     }

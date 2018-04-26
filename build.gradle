@@ -20,6 +20,8 @@ bootJar {
 
 repositories {
     mavenCentral()
+    maven { url "https://dl.bintray.com/ctoestreich/grails-plugins"}
+    maven { url "http://localhost:8081/nexus/content/groups/public/" }
 }
 
 sourceCompatibility = 1.8

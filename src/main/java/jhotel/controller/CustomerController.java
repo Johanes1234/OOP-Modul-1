@@ -1,8 +1,7 @@
-package jhotel;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+package jhotel.controller;
+import jhotel.Customer;
+import jhotel.DatabaseCustomer;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 public class CustomerController {
@@ -13,15 +12,14 @@ public class CustomerController {
     }
 
     @RequestMapping("/newcustomer")
-    public Customer newCust(@RequestParam(value="name") String name, @RequestParam(value="email") String email) {
-        Customer customer = new Customer(name, 10, 10, 10, email);
+    public Customer newCust(@RequestParam(value="name") String name, @RequestParam(value="email") String email, @RequestParam(value="password") String password) {
+        Customer customer = new Customer(name, 10, 10, 10, email, password);
         try {
             DatabaseCustomer.addCustomer(customer);
         } catch(Exception ex) {
             ex.getMessage();
             return null;
         }
-
         return customer;
     }
 
@@ -31,4 +29,10 @@ public class CustomerController {
         return customer;
     }
 
+    @RequestMapping(value = "/getCustomerLogin/{email,password}", method = RequestMethod.POST)
+    public Customer loginCust(@RequestParam(value="email") String email, @RequestParam(value="password") String password)
+    {
+        Customer loginin = DatabaseCustomer.getCustomerLogin(email, password);
+        return loginin;
+    }
 }
