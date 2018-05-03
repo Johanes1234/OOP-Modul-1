@@ -47,7 +47,11 @@ public class Customer
     
     public Customer(String name, int i, int i1, int i2, String email, String password)
     {
-
+        Customer.id = DatabaseCustomer.getLastCustomerID() + 1;
+        Customer.nama = nama;
+        //Customer.dob = new GregorianCalendar(tahun, bulan-1, tanggal).getTime();
+        Customer.email = email;
+        Customer.password = password;
     }
     
     public static boolean validate(String emailStr) 

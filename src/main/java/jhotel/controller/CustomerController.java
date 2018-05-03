@@ -11,7 +11,7 @@ public class CustomerController {
         return "Hello " + name;
     }
 
-    @RequestMapping("/newcustomer")
+    @RequestMapping(value = "/newcustomer", method = RequestMethod.POST)
     public Customer newCust(@RequestParam(value="name") String name, @RequestParam(value="email") String email, @RequestParam(value="password") String password) {
         Customer customer = new Customer(name, 10, 10, 10, email, password);
         try {
